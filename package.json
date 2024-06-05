@@ -1,0 +1,24 @@
+{
+  "name": "trpc-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev:server": "tsx watch src/server",
+    "dev:client": "wait-port 3000 && tsx watch src/client",
+    "dev": "run-p dev:* --print-label",
+    "test-dev": "start-server-and-test 'tsx src/server' 3000 'tsx src/client'",
+    "test-start": "start-server-and-test 'node dist/server' 3000 'node dist/client'"
+  },
+  "dependencies": {
+    "@trpc/client": "^11.0.0-rc.390",
+    "@trpc/server": "^11.0.0-rc.390",
+    "@types/node": "^20.14.2",
+    "npm-run-all": "^4.1.5",
+    "start-server-and-test": "^2.0.4",
+    "tsx": "^4.11.2",
+    "typescript": "^5.4.5",
+    "wait-port": "^1.1.0",
+    "zod": "^3.23.8"
+  }
+}
